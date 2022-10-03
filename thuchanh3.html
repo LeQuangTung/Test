@@ -8,29 +8,26 @@
 <script>
     function sumOfListPrime(x) {
         let sum = 0;
-        for (let i = 0; i <= x; i++) {
-            if (checkNum(i)) {
-                sum += i;
-            }
-        }
-        console.log(sum)
-        return sum;
-    }
-    function checkNum(num) {
-        let check = true;
-        if (num < 2) {
-            check = false;
-        } else if (num > 2) {
-            for (let i = 2; i < num; i++) {
-                if (num % i === 0) {
-                    check = false;
-                    break;
+        let number = 0;
+        while (number<=x) {
+            if (number <2) {
+            } else {
+                let flag = true ;
+                for (let i=2;i<number;i++){
+                    if(number%i === 0) {
+                        flag = false;
+                        break;
+                    }
+                }
+                if (flag) {
+                    sum += number;
                 }
             }
+            number ++;
         }
-        return check;
+        return sum
     }
-    sumOfListPrime(20)
+    console.log(sumOfListPrime(30))
 </script>
 </body>
 </html>
